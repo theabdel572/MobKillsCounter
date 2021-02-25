@@ -133,6 +133,10 @@ public class MKC extends JavaPlugin{
 				getConfig().set("Colors.Number-Color-if-0", "&c");
 				saveConfig();
 			}
+			if(!text.contains("Send-Message-insteadof-Command:")) {
+				getConfig().set("Config.Send-Message-insteadof-Command", true);
+				saveConfig();
+			}
 		}catch(IOException e){
 			e.printStackTrace();
 		}
