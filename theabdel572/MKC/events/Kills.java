@@ -38,7 +38,17 @@ public class Kills implements Listener{
 						players.set("Players. "+killer.getUniqueId()+" .zombies", zombiescounter+1);
 						plugin.savePlayers();
 						if(config.contains("Rewards.zombies."+(zombiescounter+1))) {
-							Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+							if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+								if(path.startsWith("msg %player%")) {
+									killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+								}else if(path.startsWith("tell %player%")) {
+									killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
+							}else {
+								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+							}
 						}
 					}else {
 						players.set("Players. "+killer.getUniqueId()+" .zombies", 1);
@@ -46,7 +56,17 @@ public class Kills implements Listener{
 						String path = config.getString("Rewards.zombies."+zombiescounter);
 						plugin.savePlayers();
 						if(config.contains("Rewards.zombies."+zombiescounter)) {
-							Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+							if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+								if(path.startsWith("msg %player%")) {
+									killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+								}else if(path.startsWith("tell %player%")) {
+									killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
+							}else {
+								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+							}
 						}
 					}
 				}
@@ -72,7 +92,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .skeletons", skeletonscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.skeletons."+(skeletonscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .skeletons", 1);
@@ -80,7 +110,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.skeletons."+skeletonscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.skeletons."+skeletonscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -106,7 +146,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .spiders", spiderscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.spiders."+(spiderscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .spiders", 1);
@@ -114,7 +164,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.spiders."+spiderscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.spiders."+spiderscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -141,7 +201,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .cave_spiders", cave_spiderscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.cave_spiders."+(cave_spiderscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .cave_spiders", 1);
@@ -149,7 +219,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.cave_spiders."+cave_spiderscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.cave_spiders."+cave_spiderscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -176,7 +256,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .blazes", blazescounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.blazes."+(blazescounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .blazes", 1);
@@ -184,7 +274,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.blazes."+blazescounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.blazes."+blazescounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -211,7 +311,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .creepers", creeperscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.creepers."+(creeperscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .creepers", 1);
@@ -219,7 +329,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.creepers."+creeperscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.creepers."+creeperscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -246,7 +366,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .ender_dragons", ender_dragonscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.ender_dragons."+(ender_dragonscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .ender_dragons", 1);
@@ -254,7 +384,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.ender_dragons."+ender_dragonscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.ender_dragons."+ender_dragonscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -281,7 +421,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .endermans", endermanscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.endermans."+(endermanscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .endermans", 1);
@@ -289,7 +439,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.endermans."+endermanscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.endermans."+endermanscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -316,7 +476,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .endermites", endermitescounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.endermites."+(endermitescounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .endermites", 1);
@@ -324,7 +494,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.endermites."+endermitescounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.endermites."+endermitescounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -351,7 +531,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .bats", batscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.bats."+(batscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .bats", 1);
@@ -359,7 +549,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.bats."+batscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.bats."+batscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -386,7 +586,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .chickens", chickenscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.chickens."+(chickenscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .chickens", 1);
@@ -394,7 +604,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.chickens."+chickenscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.chickens."+chickenscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -421,7 +641,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .cows", cowscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.cows."+(cowscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .cows", 1);
@@ -429,7 +659,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.cows."+cowscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.cows."+cowscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -456,7 +696,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .ghasts", ghastscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.ghasts."+(ghastscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .ghasts", 1);
@@ -464,7 +714,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.ghasts."+ghastscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.ghasts."+ghastscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -491,7 +751,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .guardians", guardianscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.guardians."+(guardianscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .guardians", 1);
@@ -499,7 +769,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.guardians."+guardianscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.guardians."+guardianscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -526,7 +806,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .horses", horsescounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.horses."+(horsescounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .horses", 1);
@@ -534,7 +824,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.horses."+horsescounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.horses."+horsescounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -561,7 +861,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .iron_golems", iron_golemscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.iron_golems."+(iron_golemscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .iron_golems", 1);
@@ -569,7 +879,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.iron_golems."+iron_golemscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.iron_golems."+iron_golemscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -596,7 +916,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .magma_cubes", magma_cubescounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.magma_cubes."+(magma_cubescounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .magma_cubes", 1);
@@ -604,7 +934,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.magma_cubes."+magma_cubescounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.magma_cubes."+magma_cubescounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -631,7 +971,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .mushroom_cows", mushroom_cowscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.mushroom_cows."+(mushroom_cowscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .mushroom_cows", 1);
@@ -639,7 +989,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.mushroom_cows."+mushroom_cowscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.mushroom_cows."+mushroom_cowscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -666,7 +1026,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .ocelots", ocelotscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.ocelots."+(ocelotscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .ocelots", 1);
@@ -674,7 +1044,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.ocelots."+ocelotscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.ocelots."+ocelotscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -701,7 +1081,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .pigs", pigscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.pigs."+(pigscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .pigs", 1);
@@ -709,7 +1099,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.pigs."+pigscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.pigs."+pigscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -735,7 +1135,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .pig_zombies", pig_zombiescounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.pig_zombies."+(pig_zombiescounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .pig_zombies", 1);
@@ -743,7 +1153,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.pig_zombies."+pig_zombiescounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.pig_zombies."+pig_zombiescounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -770,7 +1190,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .players", playerscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.players."+(playerscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .players", 1);
@@ -778,7 +1208,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.players."+playerscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.players."+playerscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -805,7 +1245,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .rabbits", rabbitscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.rabbits."+(rabbitscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .rabbits", 1);
@@ -813,7 +1263,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.rabbits."+rabbitscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.rabbits."+rabbitscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -840,7 +1300,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .sheeps", sheepscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.sheeps."+(sheepscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .sheeps", 1);
@@ -848,7 +1318,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.sheeps."+sheepscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.sheeps."+sheepscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -875,7 +1355,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .silverfishs", silverfishscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.silverfishs."+(silverfishscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .silverfishs", 1);
@@ -883,7 +1373,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.silverfishs."+silverfishscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.silverfishs."+silverfishscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -910,7 +1410,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .slimes", slimescounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.slimes."+(slimescounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .slimes", 1);
@@ -918,7 +1428,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.slimes."+slimescounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.slimes."+slimescounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -945,7 +1465,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .snowmans", snowmanscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.snowmans."+(snowmanscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .snowmans", 1);
@@ -953,7 +1483,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.snowmans."+snowmanscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.snowmans."+snowmanscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -980,7 +1520,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .squids", squidscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.squids."+(squidscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .squids", 1);
@@ -988,7 +1538,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.squids."+squidscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.squids."+squidscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -1015,7 +1575,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .villagers", villagerscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.villagers."+(villagerscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .villagers", 1);
@@ -1023,7 +1593,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.villagers."+villagerscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.villagers."+villagerscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -1050,7 +1630,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .witchs", witchscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.witchs."+(witchscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .witchs", 1);
@@ -1058,7 +1648,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.witchs."+witchscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.witchs."+witchscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -1085,7 +1685,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .withers", witherscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.withers."+(witherscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .withers", 1);
@@ -1093,7 +1703,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.withers."+witherscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.withers."+witherscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
@@ -1120,7 +1740,17 @@ public class Kills implements Listener{
 							players.set("Players. "+killer.getUniqueId()+" .wolfs", wolfscounter+1);
 							plugin.savePlayers();
 							if(config.contains("Rewards.wolfs."+(wolfscounter+1))) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}else {
 							players.set("Players. "+killer.getUniqueId()+" .wolfs", 1);
@@ -1128,7 +1758,17 @@ public class Kills implements Listener{
 							String path = config.getString("Rewards.wolfs."+wolfscounter);
 							plugin.savePlayers();
 							if(config.contains("Rewards.wolfs."+wolfscounter)) {
-								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								if(config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
+									if(path.startsWith("msg %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("msg %player%", "")));
+									}else if(path.startsWith("tell %player%")) {
+										killer.sendMessage(ChatColor.translateAlternateColorCodes('&', path.replaceAll("tell %player%", "")));
+									}else {
+										Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+									}
+								}else {
+									Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&', path.replaceAll("%player%", killer.getName())));
+								}
 							}
 						}
 				}
