@@ -42,6 +42,9 @@ public class MKC extends JavaPlugin{
 		registerPlayers();
 		updateChecker();
 		checkearConfig();
+		if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+			new PlaceHolderAPI_MKC(this).register();
+		}
 	}
 	public String getVersion() {
 		return this.version;
