@@ -1117,7 +1117,7 @@ public class Kills implements Listener{
 		}
 	}
 	@EventHandler
-	public void killPig_pig_zombies(EntityDeathEvent event) {
+	public void killPig_zombies(EntityDeathEvent event) {
 		Player killer = event.getEntity().getKiller();
 		EntityType entity = event.getEntityType();
 		FileConfiguration config = plugin.getConfig();
