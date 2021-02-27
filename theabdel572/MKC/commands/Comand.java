@@ -66,6 +66,7 @@ private MKC plugin;
 				sender.sendMessage(plugin.name+" "+ChatColor.translateAlternateColorCodes('&', config.getString("Config.NoPermission-Message")));
 			}
 			}else if(args[0].equalsIgnoreCase("permissions")) {
+				sender.sendMessage(ChatColor.BLUE+"mkc.placeholders "+ChatColor.BLACK+"-"+ChatColor.GREEN+" /mkc placeholders");
 				sender.sendMessage(ChatColor.BLUE+"mkc.version "+ChatColor.BLACK+"-"+ChatColor.GREEN+" /mkc version");
 				sender.sendMessage(ChatColor.BLUE+"mkc.reload "+ChatColor.BLACK+"-"+ChatColor.GREEN+" /mkc reload");
 				sender.sendMessage(ChatColor.BLUE+"mkc.mobs "+ChatColor.BLACK+"-"+ChatColor.GREEN+" /mobkills & /mobkills <player>");
@@ -74,13 +75,29 @@ private MKC plugin;
 			}
 			else if(args[0].equalsIgnoreCase("help")) {
 				sender.sendMessage(plugin.name+ChatColor.BLUE+" Commands:");
+				sender.sendMessage(ChatColor.DARK_BLUE+"/mkc page "+ChatColor.GREEN+" Use it to see the plugin page and see detailed info about the plugin.");
+				sender.sendMessage(ChatColor.DARK_BLUE+"/mkc placeholders "+ChatColor.GREEN+" Use it to see the available placeholders.");
 				sender.sendMessage(ChatColor.DARK_BLUE+"/mkc version "+ChatColor.GREEN+" Use it to see the plugin version.");
 				sender.sendMessage(ChatColor.DARK_BLUE+"/mkc reload "+ChatColor.GREEN+" Use it to reload the config.");
 				sender.sendMessage(ChatColor.DARK_BLUE+"/mkc permissions "+ChatColor.GREEN+" Use it to see the plugin permissions.");
 				sender.sendMessage(ChatColor.DARK_BLUE+"/mobkills "+ChatColor.GREEN+" Use it to see all mobs you killed.");
 				sender.sendMessage(ChatColor.DARK_BLUE+"/mobkills <player>"+ChatColor.GREEN+" Use it to see all mobs a specific player killed.");
 				sender.sendMessage(ChatColor.DARK_BLUE+"/mkc setreward <name of the mob> <kills for reward>"+ChatColor.GREEN+" Use it to set a reward for a specific number of kills to one mob.");
-			}else {
+			}else if(args[0].equalsIgnoreCase("page")) {
+				sender.sendMessage(plugin.name+ChatColor.BLUE+" The plugin page is:");
+				sender.sendMessage(ChatColor.GREEN+"https://www.spigotmc.org/resources/mobkillscounter-rewards-compatible-with-30-mobs-1-7-1-16-perfect-for-survival-servers.82876/");
+			}else if(args[0].equalsIgnoreCase("placeholders")) {
+				if(sender.hasPermission("mkc.placeholders")) {
+					sender.sendMessage(plugin.name+ChatColor.GREEN+" All placeholders have the same syntax: "+ChatColor.BLUE+"%mkc_<MobName>%");
+					sender.sendMessage(ChatColor.GREEN+"All possible arguments to "+ChatColor.BLUE+"<MobName>:");
+					sender.sendMessage("zombies, skeletons, spiders, cave_spiders, blazes, creepers, ender_dragons, endermans, endermites,");
+					sender.sendMessage("bats, chickens, cows, ghasts, guardians, horses, iron_golems, magma_cubes, mushroom_cows,");
+					sender.sendMessage("ocelots, pigs, pig_zombies, sheeps, silverfishs, slimes, snowmans, squids, villagers, witchs, withers or wolfs.");
+				}else {
+					sender.sendMessage(plugin.name+" "+ChatColor.translateAlternateColorCodes('&', config.getString("Config.NoPermission-Message")));
+				}
+			}
+			else {
 				sender.sendMessage(plugin.name+ChatColor.RED+" This command doesn't exists");
 			}
 		}else {
