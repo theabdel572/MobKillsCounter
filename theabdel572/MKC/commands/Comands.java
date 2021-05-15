@@ -1,5 +1,8 @@
 package theabdel572.MKC.commands;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -46,8 +49,10 @@ public class Comands implements CommandExecutor {
 								|| args[1].equalsIgnoreCase("withers") || args[1].equalsIgnoreCase("wolfs")) {
 							try {
 								int kills4reward = Integer.parseInt(args[2]);
+								List<String> rewards = new ArrayList<>();
+								rewards.add("tell %player% You killed " + kills4reward + " " + args[1] + ".");
 								config.set("Rewards." + args[1] + "." + kills4reward,
-										"tell %player% You killed " + kills4reward + " " + args[1] + ".");
+										rewards);
 								plugin.saveConfig();
 								sender.sendMessage(plugin.getPluginName()
 										+ " Reward set correctly! Go to config.yml to configure the command reward.");

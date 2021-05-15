@@ -153,45 +153,51 @@ public class Kills implements Listener {
 			int counter = Integer.valueOf(players.getString("Players." + killer.getUniqueId() + "." + mob));
 			players.set("Players." + killer.getUniqueId() + "." + mob, counter + 1);
 			plugin.savePlayers();
-			String rewardsPath = config.getString("Rewards." + mob + "." + (counter + 1));
+			List<String> rewardPath = config.getStringList("Rewards." + mob + "." + (counter + 1));
 			if (config.contains("Rewards." + mob + "." + (counter + 1))) {
-				if (config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
-					if (rewardsPath.startsWith("msg %player%")) {
-						killer.sendMessage(ChatColor
-								.translateAlternateColorCodes('&', rewardsPath.replaceAll("msg %player%", "")).trim());
-					} else if (rewardsPath.startsWith("tell %player%")) {
-						killer.sendMessage(ChatColor
-								.translateAlternateColorCodes('&', rewardsPath.replaceAll("tell %player%", "")).trim());
-					} else {
-						Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&',
-								rewardsPath.replaceAll("%player%", killer.getName())));
+					for(int i = 0; i < rewardPath.size(); i++) {
+						String command = rewardPath.get(i);
+						if (config.getBoolean("Config.Send-Message-insteadof-Command")) {
+							if (command.startsWith("msg %player%")) {
+								killer.sendMessage(ChatColor
+										.translateAlternateColorCodes('&', command.replaceAll("msg %player%", "")).trim());
+							} else if (command.startsWith("tell %player%")) {
+								killer.sendMessage(ChatColor
+										.translateAlternateColorCodes('&', command.replaceAll("tell %player%", "")).trim());
+							} else {
+								Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&',
+										command.replaceAll("%player%", killer.getName())));
+							}
+						} else {
+							Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&',
+									command.replaceAll("%player%", killer.getName())));
+						}
 					}
-				} else {
-					Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&',
-							rewardsPath.replaceAll("%player%", killer.getName())));
-				}
 			}
 		} else {
 			players.set("Players." + killer.getUniqueId() + ".name", killer.getName());
 			players.set("Players." + killer.getUniqueId() + "." + mob, 1);
 			int counter = Integer.valueOf(players.getString("Players." + killer.getUniqueId() + "." + mob));
-			String rewardsPath = config.getString("Rewards." + mob + "." + counter);
+			List<String> rewardPath = config.getStringList("Rewards." + mob + "." + counter);
 			plugin.savePlayers();
 			if (config.contains("Rewards." + mob + "." + counter)) {
-				if (config.getBoolean("Config.Send-Message-insteadof-Command") == true) {
-					if (rewardsPath.startsWith("msg %player%")) {
-						killer.sendMessage(ChatColor
-								.translateAlternateColorCodes('&', rewardsPath.replaceAll("msg %player%", "")).trim());
-					} else if (rewardsPath.startsWith("tell %player%")) {
-						killer.sendMessage(ChatColor
-								.translateAlternateColorCodes('&', rewardsPath.replaceAll("tell %player%", "")).trim());
+				for(int i = 0; i < rewardPath.size(); i++) {
+					String command = rewardPath.get(i);
+					if (config.getBoolean("Config.Send-Message-insteadof-Command")) {
+						if (command.startsWith("msg %player%")) {
+							killer.sendMessage(ChatColor
+									.translateAlternateColorCodes('&', command.replaceAll("msg %player%", "")).trim());
+						} else if (command.startsWith("tell %player%")) {
+							killer.sendMessage(ChatColor
+									.translateAlternateColorCodes('&', command.replaceAll("tell %player%", "")).trim());
+						} else {
+							Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&',
+									command.replaceAll("%player%", killer.getName())));
+						}
 					} else {
 						Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&',
-								rewardsPath.replaceAll("%player%", killer.getName())));
+								command.replaceAll("%player%", killer.getName())));
 					}
-				} else {
-					Bukkit.dispatchCommand(console, ChatColor.translateAlternateColorCodes('&',
-							rewardsPath.replaceAll("%player%", killer.getName())));
 				}
 			}
 		}
