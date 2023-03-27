@@ -5,11 +5,11 @@ import org.bukkit.entity.Player;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 
-public class PlaceHolderAPI_MKC extends PlaceholderExpansion {
+public class PlaceHolderApiManager extends PlaceholderExpansion {
 	// We get an instance of the plugin later.
 	private MKC plugin;
 
-	public PlaceHolderAPI_MKC(MKC plugin) {
+	public PlaceHolderApiManager(MKC plugin) {
 		this.plugin = plugin;
 	}
 

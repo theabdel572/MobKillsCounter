@@ -43,7 +43,7 @@ public class MKC extends JavaPlugin {
 		updateChecker();
 		checkConfig();
 		if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
-			new PlaceHolderAPI_MKC(this).register();
+			new PlaceHolderApiManager(this).register();
 		}
 	}
 

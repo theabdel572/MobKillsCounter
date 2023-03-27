@@ -6,8 +6,17 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
+import theabdel572.MKC.MobTypes.MobType;
+
 public interface MobKillsList {
 	// Method to send the MobKillsList with /mobkills commands.
+	public static void sendMobKillsList(MKC plugin, Player player, UUID uuid) {
+		FileConfiguration config = plugin.getConfig();
+		FileConfiguration players = plugin.getPlayers();
+		
+		
+	}
+	
 	public static void sendMobKillsListToPlayer(MKC plugin, Player player, FileConfiguration players,
 			FileConfiguration config) {
 		if (!players.contains("Players." + player.getUniqueId())) {

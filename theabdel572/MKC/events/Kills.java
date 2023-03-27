@@ -24,22 +24,30 @@ public class Kills implements Listener {
 
 	@EventHandler
 	public void killEvent(EntityDeathEvent e) {
+		
 		Player killer = e.getEntity().getKiller();
 		EntityType entity = e.getEntityType();
 		FileConfiguration config = plugin.getConfig();
 		List<String> worlds = config.getStringList("Worlds.enabled-worlds");
+		
+		
 		for (int i = 0; i < worlds.size(); i++) {
-			if (killer != null && killer.getType().equals(EntityType.PLAYER)) {
-				String world = killer.getWorld().getName();
-				if (worlds.get(i).equals(world)) {
-					isWorldAtList = true;
-					break;
-				} else {
-					isWorldAtList = false;
-				}
+			if (killer == null || killer.getType() != EntityType.PLAYER) {
+				break;
 			}
+			
+			String world = killer.getWorld().getName();
+				
+			if (worlds.get(i).equals(world)) {
+				isWorldAtList = true;
+				break;
+			}
+			isWorldAtList = false;
 		}
-		if (isWorldAtList && killer != null && killer.getType().equals(EntityType.PLAYER)) {
+		
+		if (!isWorldAtList || killer == null || killer.getType() != EntityType.PLAYER) {
+			return;
+		}
 			switch (entity) {
 			case ZOMBIE:
 				onKill(e, "zombies");
@@ -140,7 +148,6 @@ public class Kills implements Listener {
 			default:
 				break;
 			}
-		}
 	}
 
 	public void onKill(EntityDeathEvent e, String mob) {
