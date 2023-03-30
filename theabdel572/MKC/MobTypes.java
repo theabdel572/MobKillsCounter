@@ -1,10 +1,12 @@
 package theabdel572.MKC;
 
+import java.util.List;
+
 import org.bukkit.entity.EntityType;
 
 public class MobTypes{
 	//Enum to manage mobtypes and their respective config paths.
-	enum MobType{
+	public enum MobType{
 		
 		ZOMBIE("zombies"), SKELETON("skeletons"), SPIDER("spiders"), CAVE_SPIDER("cave_spiders"), BLAZE("blazes"),
 		CREEPER("creepers"), ENDER_DRAGON("ender_dragons"), ENDERMAN("endermans"), ENDERMITE("endermites"),
@@ -22,14 +24,27 @@ public class MobTypes{
 		}
 		
 		//Getting the MobType (this enum) from the name of the EntityType (bukkit enum).
-		public MobType getFromEntityType(EntityType entity) {
+		public static MobType getFromEntityType(EntityType entity) {
 			@SuppressWarnings("deprecation")
 			String name = entity.getName();
 			
 			return MobType.valueOf(name.toUpperCase());
 		}
 		
+		//Get an array with all the paths of the MobType enum.
+		public static String[] getEveryPath(){
+			
+			String[] paths = {};
+			
+			for(int i=0; i < MobType.values().length; i++) {
+				
+				String path = MobType.values()[i].getPath();
+				paths[i] = path;
+			}
+			
+			return paths;
+		}
 		
-		private String path;
+		private final String path;
 	}
 }
