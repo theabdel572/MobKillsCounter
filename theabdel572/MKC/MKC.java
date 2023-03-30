@@ -123,10 +123,10 @@ public class MKC extends JavaPlugin {
 
 	public void checkConfig() {
 		FileConfiguration config = getConfig();
-		Path archivo = Paths.get(configPath);
+		Path file = Paths.get(configPath);
 		List<String> worlds = config.getStringList("Worlds.enabled-worlds");
 		try {
-			String text = new String(Files.readAllBytes(archivo));
+			String text = new String(Files.readAllBytes(file));
 			if (!text.contains("SendMobkills-On-Join:")) {
 				getConfig().set("Config.SendMobkills-On-Join", true);
 				saveConfig();
