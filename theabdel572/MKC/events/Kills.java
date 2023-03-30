@@ -6,7 +6,6 @@ import java.util.Map;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -62,8 +61,6 @@ public class Kills implements Listener {
 			public void onKill(EntityDeathEvent e, MobType mob) {
 				Player killer = e.getEntity().getKiller();
 				FileConfiguration players = plugin.getPlayers();
-				FileConfiguration config = plugin.getConfig();
-				ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
 				String path = "Players." + killer.getUniqueId() + "." + mob.getPath();
 				
 				// System to add mobkills to players & rewards system.
