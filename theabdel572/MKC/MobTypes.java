@@ -45,6 +45,17 @@ public class MobTypes{
 			return paths;
 		}
 		
+		public static boolean isPath(String s) {
+			
+			for(String path : MobType.getEveryPath()) {
+				if(path.equalsIgnoreCase(s)) {
+					return true;
+				}
+			}
+			
+			return false;
+		}
+		
 		private final String path;
 	}
 }
