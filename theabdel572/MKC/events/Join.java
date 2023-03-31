@@ -19,11 +19,10 @@ public class Join implements Listener {
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
 		Player player = e.getPlayer();
-		FileConfiguration players = plugin.getPlayers();
 		FileConfiguration config = plugin.getConfig();
 		if (config.getBoolean("Config.SendMobkills-On-Join")) {
 			if (player.hasPermission("mkc.mobs")) {
-				MobKillsList.sendMobKillsListToPlayer(plugin, player, players, config);
+				MobKillsList.sendMobKillsList(plugin, player, player.getUniqueId());
 			}
 		}
 		if (player.hasPermission("mkc.updatecheck") && !(plugin.getVersion().equals(plugin.getLatestVersion()))) {

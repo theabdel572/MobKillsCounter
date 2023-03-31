@@ -29,14 +29,13 @@ public class KillsCommand implements CommandExecutor {
 			return false;
 		} else {
 			Player player = (Player) sender;
-			FileConfiguration players = plugin.getPlayers();
 			if (player.hasPermission("mkc.mobs")) {
 				if (args.length == 0) {
-					MobKillsList.sendMobKillsList(plugin, player.getUniqueId());
+					MobKillsList.sendMobKillsList(plugin, player, player.getUniqueId());
 				} else if (args.length == 1) {
 					String user = args[0];
 					UUID uid = Bukkit.getOfflinePlayer(user).getUniqueId();
-					MobKillsList.sendMobKillsList(plugin, uid);
+					MobKillsList.sendMobKillsList(plugin, player, uid);
 				}
 			} else {
 				player.sendMessage(plugin.getPluginName() + " "
