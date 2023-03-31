@@ -1,5 +1,9 @@
 package theabdel572.MKC;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.bukkit.entity.EntityType;
 
 public class MobTypes{
@@ -33,12 +37,15 @@ public class MobTypes{
 		public static String[] getEveryPath(){
 			
 			String[] paths = {};
+			List<String> pathList = new ArrayList<String>(Arrays.asList(paths));
 			
 			for(int i=0; i < MobType.values().length; i++) {
 				
 				String path = MobType.values()[i].getPath();
-				paths[i] = path;
+				pathList.add(path);
 			}
+			
+			paths = pathList.toArray(paths);
 			
 			return paths;
 		}
