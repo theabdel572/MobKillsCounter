@@ -1,7 +1,5 @@
 package theabdel572.MKC;
 
-import java.util.List;
-
 import org.bukkit.entity.EntityType;
 
 public class MobTypes{
