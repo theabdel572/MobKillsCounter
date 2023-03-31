@@ -32,11 +32,11 @@ public class KillsCommand implements CommandExecutor {
 			FileConfiguration players = plugin.getPlayers();
 			if (player.hasPermission("mkc.mobs")) {
 				if (args.length == 0) {
-					MobKillsList.sendMobKillsListToPlayer(plugin, player, players, config);
+					MobKillsList.sendMobKillsList(plugin, player.getUniqueId());
 				} else if (args.length == 1) {
 					String user = args[0];
 					UUID uid = Bukkit.getOfflinePlayer(user).getUniqueId();
-					MobKillsList.sendMobKillsListFromUUID(plugin, player, uid, players, config);
+					MobKillsList.sendMobKillsList(plugin, uid);
 				}
 			} else {
 				player.sendMessage(plugin.getPluginName() + " "
