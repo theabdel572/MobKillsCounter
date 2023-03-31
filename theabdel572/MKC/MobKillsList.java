@@ -2,7 +2,6 @@ package theabdel572.MKC;
 
 import java.util.UUID;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -12,12 +11,11 @@ import theabdel572.MKC.MobTypes.MobType;
 public interface MobKillsList {
 	
 	// Method to send the MobKillsList with /mobkills commands.
-	public static void sendMobKillsList(MKC plugin, UUID uuid) {
+	public static void sendMobKillsList(MKC plugin, Player player, UUID uuid) {
 		
 		FileConfiguration config = plugin.getConfig();
 		FileConfiguration players = plugin.getPlayers();
 		
-		Player player = Bukkit.getPlayer(uuid);
 		
 		String path = "Players." + uuid + ".";
 		String[] mobTypePaths = MobType.getEveryPath();
