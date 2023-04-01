@@ -5,6 +5,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import theabdel572.MKC.MobTypes.MobType;
 
+// Class to manage placeholders.
 public class PlaceHolderApiManager extends PlaceholderExpansion {
   // We get an instance of the plugin later.
   private MKC plugin;

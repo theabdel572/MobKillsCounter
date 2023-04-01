@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import theabdel572.MKC.MKC;
 import theabdel572.MKC.MobKillsList;
 
+// Class to manage the /mobkills command to show the mobkills list.
 public class KillsCommand implements CommandExecutor {
   private MKC plugin;
 

@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 import org.bukkit.entity.EntityType;
 
+/* Class containing an enum to manage all the mobs compatible with the plugin
+ * and their respective paths in the config files.
+*/
 public class MobTypes {
   // Enum to manage mobtypes and their respective config paths.
   public enum MobType {

@@ -6,6 +6,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import theabdel572.MKC.MobTypes.MobType;
 
+// Interface to manage the mob kills list.
 public interface MobKillsList {
 
   // Method to send the MobKillsList with /mobkills commands.

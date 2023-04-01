@@ -24,6 +24,7 @@ import theabdel572.MKC.commands.KillsCommand;
 import theabdel572.MKC.events.Join;
 import theabdel572.MKC.events.Kills;
 
+// Main plugin class.
 public class MKC extends JavaPlugin {
   private FileConfiguration players = null;
   private File playersFile = null;

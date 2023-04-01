@@ -9,6 +9,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import theabdel572.MKC.MKC;
 import theabdel572.MKC.MobKillsList;
 
+// Class to manage player joining events.
 public class Join implements Listener {
   private MKC plugin;
 

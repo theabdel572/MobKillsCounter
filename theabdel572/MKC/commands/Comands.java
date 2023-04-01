@@ -10,6 +10,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import theabdel572.MKC.MKC;
 import theabdel572.MKC.MobTypes.MobType;
 
+// Class to manage the main /mkc commands.
 public class Comands implements CommandExecutor {
   private MKC plugin;
 

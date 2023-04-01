@@ -15,6 +15,7 @@ import theabdel572.MKC.MKC;
 import theabdel572.MKC.MobKillsList;
 import theabdel572.MKC.MobTypes.MobType;
 
+// Class to manage player kills events.
 public class Kills implements Listener {
   private MKC plugin;
   private boolean isWorldAtList;
