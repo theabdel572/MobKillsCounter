@@ -15,7 +15,7 @@ import theabdel572.MKC.MobKillsList;
 public class KillsCommand implements CommandExecutor {
   private MKC plugin;
 
-  //Instance of the /mobkills command class.
+  // Instance of the /mobkills command class.
   public KillsCommand(MKC plugin) {
     this.plugin = plugin;
   }

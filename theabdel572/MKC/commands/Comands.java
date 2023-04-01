@@ -14,7 +14,7 @@ import theabdel572.MKC.MobTypes.MobType;
 public class Comands implements CommandExecutor {
   private MKC plugin;
 
-  //Instance of the /mkc command class.
+  // Instance of the /mkc command class.
   public Comands(MKC plugin) {
     this.plugin = plugin;
   }
