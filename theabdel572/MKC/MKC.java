@@ -35,6 +35,7 @@ public class MKC extends JavaPlugin {
       ChatColor.AQUA + "[" + ChatColor.GOLD + "MobKillsCounter" + ChatColor.AQUA + "]";
   private String latestversion;
 
+  // Method called when the plugin enables.
   public void onEnable() {
     registerCommands();
     registerEvents();
@@ -59,11 +60,13 @@ public class MKC extends JavaPlugin {
     return this.name;
   }
 
+  // Method to register the command classes to the plugin.
   public void registerCommands() {
     this.getCommand("mkc").setExecutor(new Comands(this));
     this.getCommand("mobkills").setExecutor(new KillsCommand(this));
   }
 
+  // Method to register the config.yml file and create it if it doesn't exist.
   public void registerConfig() {
     File config = new File(this.getDataFolder(), ("config.yml"));
     configPath = config.getPath();
@@ -73,6 +76,7 @@ public class MKC extends JavaPlugin {
     }
   }
 
+  // Method to register the listeners for the plugin.
   public void registerEvents() {
     PluginManager pm = getServer().getPluginManager();
     pm.registerEvents(new Kills(this), this);
@@ -86,6 +90,7 @@ public class MKC extends JavaPlugin {
     return players;
   }
 
+  // Method to reload players.yml file.
   public void reloadPlayers() {
     if (players == null) {
       playersFile = new File(getDataFolder(), "players.yml");
@@ -103,6 +108,7 @@ public class MKC extends JavaPlugin {
     }
   }
 
+  // Method to save the players.yml file.
   public void savePlayers() {
     try {
       players.save(playersFile);
@@ -111,6 +117,7 @@ public class MKC extends JavaPlugin {
     }
   }
 
+  // Method to register the players.yml file and create it if it doesn't exist.
   public void registerPlayers() {
     playersFile = new File(this.getDataFolder(), "players.yml");
     if (!playersFile.exists()) {
@@ -119,6 +126,7 @@ public class MKC extends JavaPlugin {
     }
   }
 
+  // Method to check if the config is up-to-date and if not, create the new paths.
   public void checkConfig() {
     FileConfiguration config = getConfig();
     Path file = Paths.get(configPath);
@@ -149,6 +157,7 @@ public class MKC extends JavaPlugin {
     }
   }
 
+  // Method to check for updates at the spigot's plugin page.
   public void updateChecker() {
     try {
       HttpURLConnection con =

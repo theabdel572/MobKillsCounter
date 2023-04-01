@@ -20,6 +20,7 @@ public class KillsCommand implements CommandExecutor {
   }
 
   @SuppressWarnings("deprecation")
+  // Method to handle /mobkills command.
   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
     FileConfiguration config = plugin.getConfig();
     if (!(sender instanceof Player)) {

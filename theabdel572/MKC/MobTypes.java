@@ -77,6 +77,7 @@ public class MobTypes {
       return paths;
     }
 
+    // Method to check if the given String is the path of some of the enum's elements.
     public static boolean isPath(String s) {
 
       for (String path : MobType.getEveryPath()) {

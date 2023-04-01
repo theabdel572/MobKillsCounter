@@ -18,6 +18,7 @@ public class Join implements Listener {
   }
 
   @EventHandler
+  // Method to handle the player join listener.
   public void onPlayerJoin(PlayerJoinEvent e) {
     Player player = e.getPlayer();
     FileConfiguration config = plugin.getConfig();

@@ -25,6 +25,7 @@ public class Kills implements Listener {
   }
 
   @EventHandler
+  // Method to handle when an entity dies events.
   public void killEvent(EntityDeathEvent e) {
 
     Player killer = e.getEntity().getKiller();

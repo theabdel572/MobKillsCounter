@@ -190,6 +190,7 @@ public class Comands implements CommandExecutor {
     return true;
   }
 
+  // Method to send the help message of the plugin.
   public void sendMKCHelp(CommandSender sender) {
     sender.sendMessage(plugin.getPluginName() + ChatColor.BLUE + " Commands:");
     sender.sendMessage(

@@ -70,6 +70,7 @@ public interface MobKillsList {
                 + "---------"));
   }
 
+  // Method to check if a player has any kill of a specific mob.
   public static boolean hasMobKill(MKC plugin, Player player, MobType mob) {
 
     FileConfiguration players = plugin.getPlayers();
