@@ -13,6 +13,7 @@ import theabdel572.MKC.MobKillsList;
 public class Join implements Listener {
   private MKC plugin;
 
+  // Instance of the class to manage player joining events.
   public Join(MKC plugin) {
     this.plugin = plugin;
   }

@@ -44,6 +44,7 @@ public class MobTypes {
     WITHER("withers"),
     WOLF("wolfs");
 
+	// Creates a MobType instance with the given path, which is gonna be used in config files.
     private MobType(String path) {
       this.path = path;
     }

@@ -20,6 +20,7 @@ public class Kills implements Listener {
   private MKC plugin;
   private boolean isWorldAtList;
 
+  //Instance of the class to manage killing related events.
   public Kills(MKC plugin) {
     this.plugin = plugin;
   }

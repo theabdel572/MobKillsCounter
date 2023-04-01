@@ -10,6 +10,7 @@ public class PlaceHolderApiManager extends PlaceholderExpansion {
   // We get an instance of the plugin later.
   private MKC plugin;
 
+  // Instance of the placeholderapi manager class.
   public PlaceHolderApiManager(MKC plugin) {
     this.plugin = plugin;
   }
