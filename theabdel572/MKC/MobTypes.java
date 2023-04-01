@@ -7,7 +7,7 @@ import org.bukkit.entity.EntityType;
 
 /* Class containing an enum to manage all the mobs compatible with the plugin
  * and their respective paths in the config files.
-*/
+ */
 public class MobTypes {
   // Enum to manage mobtypes and their respective config paths.
   public enum MobType {
@@ -44,7 +44,7 @@ public class MobTypes {
     WITHER("withers"),
     WOLF("wolfs");
 
-	// Creates a MobType instance with the given path, which is gonna be used in config files.
+    // Creates a MobType instance with the given path, which is gonna be used in config files.
     private MobType(String path) {
       this.path = path;
     }
