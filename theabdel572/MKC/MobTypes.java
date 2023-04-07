@@ -42,7 +42,14 @@ public class MobTypes {
     VILLAGER("villagers"),
     WITCH("witchs"),
     WITHER("withers"),
-    WOLF("wolfs");
+    WOLF("wolfs"),
+    WARDEN("wardens"),
+    ALLAY("allays"),
+    AXOLOTL("axolotles"),
+    BEE("bees"),
+    PIGLIN("piglins"),
+    PIGLIN_BRUTE("brute_piglins"),
+    ZOMBIFIED_PIGLIN("zombified_piglins");
 
     // Creates a MobType instance with the given path, which is gonna be used in config files.
     private MobType(String path) {
