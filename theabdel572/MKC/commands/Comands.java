@@ -74,8 +74,8 @@ public class Comands implements CommandExecutor {
                       + " mushroom_cows,");
               sender.sendMessage(
                   "ocelots, pigs, pig_zombies, sheeps, silverfishs, slimes, snowmans, squids,"
-                      + " villagers, witchs, withers, wolfs, wardens, allays, axolotles, bees, piglins, brute_piglins,"
-                      + " and zombified_piglins.");
+                      + " villagers, witchs, withers, wolfs, wardens, allays, axolotles, bees,"
+                      + " piglins, brute_piglins, and zombified_piglins.");
             }
           } else {
             sender.sendMessage(
@@ -174,8 +174,8 @@ public class Comands implements CommandExecutor {
                   + " mushroom_cows,");
           sender.sendMessage(
               "ocelots, pigs, pig_zombies, sheeps, silverfishs, slimes, snowmans, squids,"
-            		  + " villagers, witchs, withers, wolfs, wardens, allays, axolotles, bees, piglins, brute_piglins,"
-                      + " and zombified_piglins.");
+                  + " villagers, witchs, withers, wolfs, wardens, allays, axolotles, bees, piglins,"
+                  + " brute_piglins, and zombified_piglins.");
         } else {
           sender.sendMessage(
               plugin.getPluginName()
